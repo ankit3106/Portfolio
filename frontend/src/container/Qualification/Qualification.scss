@@ -1,0 +1,147 @@
+.app__qualification {
+  display: flex;
+  flex: 1 1 0%;
+  width: 100%;
+  flex-direction: column;
+}
+
+.qualification__container {
+  width: 100%;
+  margin: 3rem auto 0 -3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qualification__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 2rem 0;
+  margin: 3rem;
+}
+
+/* Draw the central vertical line */
+.qualification__content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background: var(--secondary-color);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.qualification__data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1; /* Ensure content is above the line */
+
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-start;
+    .shift {
+      display: none;
+    }
+  }
+}
+
+.qualification__data > div {
+  flex: 1;
+}
+
+.qualification__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.qualification__subtitle {
+  font-size: 0.9rem;
+  color: var(--gray-color);
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.qualification__calender {
+  display: flex;
+  align-items: left;
+  font-size: 0.85rem;
+  color: var(--gray-color);
+  margin-top: 0.15rem;
+
+  i {
+    margin-right: 0.4rem;
+    font-size: 0.89rem;
+    color: var(--secondary-color);
+  }
+}
+
+/* Dot styles, now centered absolutely on the line */
+.qualification__rounder {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border: 3px solid var(--secondary-color);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 0.2rem;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Vertical line between dots */
+.qualification__line {
+  display: block;
+  width: 3px;
+  height: 100%;
+  background: var(--secondary-color);
+  position: absolute;
+  left: 50%;
+  top: 18px;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* For spacing on left/right alternation */
+.shift {
+  flex: 1;
+}
+
+.qualification__active {
+  display: block;
+}
+
+@media screen and (max-width: 900px) {
+  .qualification__container {
+    width: 100%;
+    margin: 2rem 0 0 0;
+    padding: 0 1rem;
+  }
+  .qualification__data {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    .shift {
+      display: none;
+    }
+  }
+  .qualification__rounder,
+  .qualification__line {
+    left: 0;
+    transform: none;
+  }
+  .qualification__content::before {
+    left: 12px;
+    transform: none;
+  }
+}

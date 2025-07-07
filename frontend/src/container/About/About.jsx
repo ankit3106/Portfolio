@@ -18,6 +18,7 @@ const About = () => {
 
   return (
     <>
+      <h1 className='head-text'> About Me</h1>
       <h6 className="about-text">Hi! I'm <span className='bold-text'>Ankit Bhandari</span> , an
         engineering 4th Year Student from <br /> <span className='bold-text'>Indian
           Institute of Information Technology, Allahabad (IIITA)</span> <br />

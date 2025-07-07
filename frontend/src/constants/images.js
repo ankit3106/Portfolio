@@ -26,6 +26,7 @@ import about04 from '../assets/about04.png';
 import profile from '../assets/profile.jpg';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
+import logoPort from '../assets/logo_port.png';
 
 import adidas from '../assets/adidas.png';
 import amazon from '../assets/amazon.png';
@@ -82,4 +83,5 @@ export default {
   codechef,
   linkedin,
   github,
+  logoPort,
 };
